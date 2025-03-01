@@ -1,5 +1,6 @@
 package com.example.recipely.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.example.recipely.databinding.FragmentRecipesBinding
 import com.example.recipely.model.Recipe
 import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.repository.UserRepositoryImpl
+import com.example.recipely.ui.activity.AddRecipeActivity
 import com.example.recipely.viewmodel.RecipeViewModel
 import com.example.recipely.viewmodel.UserViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -63,7 +65,7 @@ class RecipesFragment : Fragment() {
     private fun setupFab() {
         binding.fabAdd.setOnClickListener {
             Log.d("MyRecipesFragment", "FAB clicked! Opening AddRecipeActivity")
-//            startActivity(Intent(requireContext(), AddRecipeActivity::class.java))
+            startActivity(Intent(requireContext(), AddRecipeActivity::class.java))
         }
     }
 
