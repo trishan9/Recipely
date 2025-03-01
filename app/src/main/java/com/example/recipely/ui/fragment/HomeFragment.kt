@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.recipely.R
 import com.example.recipely.adapter.RecipesAdapter
 import com.example.recipely.databinding.FragmentHomeBinding
+import com.example.recipely.model.BookmarkModel
 import com.example.recipely.model.Recipe
 import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.utils.LoadingUtils
