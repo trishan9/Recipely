@@ -1,6 +1,7 @@
 package com.example.recipely.ui.activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -33,8 +34,8 @@ class LoginActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE)
 
         binding.register.setOnClickListener {
-//            val intent= Intent(this@LoginActivity, SignupActivity::class.java)
-//            startActivity(intent)
+            val intent= Intent(this@LoginActivity, SignupActivity::class.java)
+            startActivity(intent)
         }
 
         binding.loginButton.setOnClickListener {
