@@ -51,10 +51,11 @@
 
         <EditText
             android:id="@+id/editFullName"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
             android:background="@drawable/input_shape"
             android:ems="10"
             android:hint="Trishan Wagle"
@@ -63,6 +64,7 @@
             android:paddingEnd="14dp"
             android:textColor="@color/secondary"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -79,10 +81,11 @@
 
         <EditText
             android:id="@+id/editEmail"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
             android:background="@drawable/input_shape"
             android:ems="10"
             android:hint="mailtotrishan@gmail.com"
@@ -91,6 +94,7 @@
             android:paddingEnd="14dp"
             android:textColor="@color/secondary"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -107,10 +111,11 @@
 
         <EditText
             android:id="@+id/editPassword"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
             android:background="@drawable/input_shape"
             android:ems="10"
             android:inputType="textPassword"
@@ -118,6 +123,7 @@
             android:paddingEnd="14dp"
             android:textColor="@color/secondary"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -189,13 +195,15 @@
 
         <Spinner
             android:id="@+id/selectCountry"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
             android:background="@drawable/input_shape"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -212,15 +220,17 @@
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteCity"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="36dp"
             android:background="@drawable/input_shape"
             android:hint="Search City..."
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -236,14 +246,16 @@
 
         <Button
             android:id="@+id/signupBtn"
-            android:layout_width="341dp"
+            android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="6dp"
+            android:layout_marginEnd="36dp"
             android:backgroundTint="@color/primary"
             android:text="Sign Up"
             android:textSize="16sp"
             app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 

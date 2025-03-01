@@ -102,6 +102,7 @@ class SignupActivity : AppCompatActivity() {
 
     private fun uploadImage() {
         if (imageUri != null) {
+            loadingUtils.show()
             userViewModel.uploadImage(this, imageUri!!) { imageUrl ->
                 Log.d("SignupActivity", "Image URL: $imageUrl")
                 if (imageUrl != null) {
@@ -119,7 +120,6 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun signupUser(url: String) {
-        loadingUtils.show()
         val fullName = binding.editFullName.text.toString().trim()
         val email = binding.editEmail.text.toString().trim()
         val password = binding.editPassword.text.toString().trim()
