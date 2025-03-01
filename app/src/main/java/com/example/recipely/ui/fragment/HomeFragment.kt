@@ -15,6 +15,7 @@ import com.example.recipely.model.BookmarkModel
 import com.example.recipely.model.Recipe
 import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.utils.LoadingUtils
+import com.example.recipely.viewmodel.BookmarkViewModel
 import com.example.recipely.viewmodel.RecipeViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val recipeViewModel: RecipeViewModel by lazy { RecipeViewModel(RecipeRepositoryImpl()) }
+    private val bookmarkViewModel: BookmarkViewModel by lazy { BookmarkViewModel() }
     private lateinit var recipeAdapter: RecipesAdapter
     private var currentFilter = "All"
 
@@ -105,30 +107,24 @@ class HomeFragment : Fragment() {
     }
 
     private fun handleBookmark(recipe: Recipe) {
-        // Show a simple loader while processing the booking
         val loader = LoadingUtils(requireActivity())
         loader.show()
 
-        // Retrieve the current user ID (assuming FirebaseAuth is set up)
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: "unknown"
 
-//        // Create a new booking object; bookingDate is set to the current time.
-//        val booking = Booking(
-//            eventId = event.id,
-//            userId = userId,
-//            bookingDate = System.currentTimeMillis(),
-//            status = "CONFIRMED"
-//        )
-//
-//        // Send booking data to Firebase via the BookingViewModel
-//        bookingViewModel.createBooking(booking) { success, message, bookingId ->
-//            loader.dismiss()
-//            if (success) {
-//                Toast.makeText(context, "Booking successful!", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(context, "Booking failed: $message", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+        val bookmark = BookmarkModel(
+            recipeId = recipe.id,
+            userId = userId,
+        )
+
+        bookmarkViewModel.createBookmark(bookmark) { success, message, bookingId ->
+            loader.dismiss()
+            if (success) {
+                Toast.makeText(context, "Bookmark successful!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Bookmark failed: $message", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onDestroyView() {

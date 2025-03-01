@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.recipely.model.BookmarkModel
 import com.example.recipely.repository.BookmarkRepositoryImpl
 
-class BookingViewModel(
+class BookmarkViewModel(
     private val repo: BookmarkRepositoryImpl = BookmarkRepositoryImpl()
 ) : ViewModel() {
 
