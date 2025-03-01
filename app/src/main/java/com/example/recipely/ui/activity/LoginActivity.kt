@@ -53,9 +53,9 @@ class LoginActivity : AppCompatActivity() {
                     editor.putString("password", password)
                     editor.apply()
 
-//                    val intent= Intent(this@LoginActivity, DashboardActivity::class.java)
-//                    startActivity(intent)
-//                    finish()
+                    val intent= Intent(this@LoginActivity, DashboardActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     loadingUtils.dismiss()
                     Snackbar.make(binding.main, message, Snackbar.LENGTH_SHORT).show()

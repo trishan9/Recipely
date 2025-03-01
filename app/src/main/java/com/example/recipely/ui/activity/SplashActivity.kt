@@ -28,13 +28,15 @@ class SplashActivity : AppCompatActivity() {
         val password: String = sharedPreferences.getString("password", "").toString()
 
         Handler(Looper.getMainLooper()).postDelayed({
-//            if (username.isEmpty()) {
+            if (username.isEmpty()) {
                 val intent = Intent(this@SplashActivity, LoginActivity::class.java)
                 startActivity(intent)
-//            } else {
-//                val intent = Intent(this@SplashActivity, DashboardActivity::class.java)
-//                startActivity(intent)
-//            }
+                finish()
+            } else {
+                val intent = Intent(this@SplashActivity, DashboardActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }, 6000)
 
 
