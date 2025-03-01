@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     testImplementation(libs.junit)
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.cloudinary:cloudinary-android:2.1.0")
