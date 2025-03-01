@@ -2,7 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#FFC987</color>
+
+    <color name="black50">#00000080</color>
+    <color name="primary">#07B464</color>
+    <color name="secondary">#0B4654</color>
+    <color name="twGray200">#e5e7eb</color>
+    <color name="twGray">#888888</color>
+    <color name="twSlate100">#f1f5f9</color>
+    <color name="twSlate200">#e2e8f0</color>
+    <color name="twSlate300">#cbd5e1</color>
+    <color name="twSlate400">#94a3b8</color>
+    <color name="twBlue">#6e61ef</color>
+    <color name="twBlueBg">#dfdbfc</color>
+    <color name="twOrange">#f2a484</color>
+    <color name="twOrangeBg">#f9ddd1</color>
 
     <!-- Gray -->
     <color name="gray_50">#F9FAFB</color>
