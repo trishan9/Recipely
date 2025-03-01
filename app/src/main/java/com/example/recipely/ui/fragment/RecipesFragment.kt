@@ -43,8 +43,10 @@ class RecipesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupRecyclerView()
+        binding.fabAdd.visibility = View.VISIBLE
+
         setupFab()
+        setupRecyclerView()
         setupFilterChips()
         fetchUserRecipes()
     }
@@ -56,7 +58,7 @@ class RecipesFragment : Fragment() {
             onDeleteClicked = { recipe -> deleteRecipe(recipe) }
         )
 
-        binding.recyclerViewMyEvents.apply {
+        binding.recyclerViewMyRecipes.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = myRecipesAdapter
         }
@@ -146,10 +148,10 @@ class RecipesFragment : Fragment() {
 
     private fun updateEmptyState(isEmpty: Boolean) {
         if (isEmpty) {
-            binding.recyclerViewMyEvents.visibility = View.GONE
+            binding.recyclerViewMyRecipes.visibility = View.GONE
             binding.tvEmptyState.visibility = View.VISIBLE
         } else {
-            binding.recyclerViewMyEvents.visibility = View.VISIBLE
+            binding.recyclerViewMyRecipes.visibility = View.VISIBLE
             binding.tvEmptyState.visibility = View.GONE
         }
     }
