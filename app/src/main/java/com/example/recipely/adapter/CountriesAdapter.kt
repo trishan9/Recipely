@@ -3,7 +3,7 @@ package com.example.recipely.adapter
 import android.content.Context
 import android.widget.ArrayAdapter
 
-private val countries = arrayOf(
+val countries = arrayOf(
     "Nepal",
     "France",
     "USA",
