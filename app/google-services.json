@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "628891489853",
+    "project_id": "kala-studios",
+    "storage_bucket": "kala-studios.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628891489853:android:e6ed20ec08d1847e1efc54",
+        "android_client_info": {
+          "package_name": "com.example.recipely"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmooo2XHrtiN89hN_19h17uFr9NiSABmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
