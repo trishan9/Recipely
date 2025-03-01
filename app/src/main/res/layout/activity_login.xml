@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/twSlate100"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.LoginActivity"> 
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,14 +16,12 @@
 
         <ImageView
             android:id="@+id/imageBrowse"
-            android:layout_width="345dp"
-            android:layout_height="307dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:contentDescription="Image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/graphics" />
+            app:srcCompat="@drawable/graphics2" />
 
         <TextView
             android:id="@+id/textView"
