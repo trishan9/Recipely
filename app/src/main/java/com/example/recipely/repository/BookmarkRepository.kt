@@ -2,7 +2,7 @@ package com.example.recipely.repository
 
 import com.example.recipely.model.BookmarkModel
 
-interface BookingRepository {
+interface BookmarkRepository {
     fun createBookmark(bookmark: BookmarkModel, callback: (Boolean, String, String) -> Unit)
     fun getBookmark(bookmarkId: String, callback: (BookmarkModel?, Boolean, String) -> Unit)
     fun updateBookmark(
@@ -13,7 +13,7 @@ interface BookingRepository {
     fun deleteBookmark(bookmarkId: String, callback: (Boolean, String) -> Unit)
     fun getUserBookmarks(userId: String, callback: (List<BookmarkModel>, Boolean, String) -> Unit)
     fun getRecipeBookmarks(
-        eventId: String,
+        recipeId: String,
         callback: (List<BookmarkModel>, Boolean, String) -> Unit
     )
 }
