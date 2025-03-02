@@ -16,6 +16,7 @@ import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.repository.UserRepositoryImpl
 import com.example.recipely.ui.activity.AddRecipeActivity
 import com.example.recipely.ui.activity.EditRecipeActivity
+import com.example.recipely.ui.activity.RecipeDetailsActivity
 import com.example.recipely.viewmodel.RecipeViewModel
 import com.example.recipely.viewmodel.UserViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -56,7 +57,8 @@ class RecipesFragment : Fragment() {
         myRecipesAdapter = MyRecipesAdapter(
             recipeList = mutableListOf(),
             onEditClicked = { recipe -> launchUpdateRecipeActivity(recipe) },
-            onDeleteClicked = { recipe -> deleteRecipe(recipe) }
+            onDeleteClicked = { recipe -> deleteRecipe(recipe) },
+            onRecipeClick = { event -> navigateToRecipeDetail(event) },
         )
 
         binding.recyclerViewMyRecipes.apply {
@@ -92,6 +94,12 @@ class RecipesFragment : Fragment() {
         }
         myRecipesAdapter.setData(filteredRecipes)
         updateEmptyState(filteredRecipes.isEmpty())
+    }
+
+    private fun navigateToRecipeDetail(recipe: Recipe) {
+        val intent = Intent(requireContext(), RecipeDetailsActivity::class.java)
+        intent.putExtra("RECIPE_ID", recipe.id)
+        startActivity(intent)
     }
 
     private fun launchUpdateRecipeActivity(

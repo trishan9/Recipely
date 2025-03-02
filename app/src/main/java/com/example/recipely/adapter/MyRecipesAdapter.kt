@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 
 class MyRecipesAdapter(
     private var recipeList: MutableList<Recipe>,
+    private val onRecipeClick: (Recipe) -> Unit,
     private val onEditClicked: (Recipe) -> Unit,
     private val onDeleteClicked: (Recipe) -> Unit
 ) : RecyclerView.Adapter<MyRecipesAdapter.MyRecipesViewHolder>() {
@@ -45,6 +46,7 @@ class MyRecipesAdapter(
 
             btnEdit.setOnClickListener { onEditClicked(recipe) }
             btnDelete.setOnClickListener { onDeleteClicked(recipe) }
+            holder.itemView.setOnClickListener { onRecipeClick(recipe) }
         }
     }
 
