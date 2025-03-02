@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/twSlate100"
-    tools:context=".ui.activity.AddRecipeActivity">
+    tools:context=".ui.activity.EditRecipeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -256,7 +256,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <Button
-            android:id="@+id/addRecipeBtn"
+            android:id="@+id/editRecipeBtn"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginStart="36dp"
@@ -264,7 +264,7 @@
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/primary"
-            android:text="Add Recipe"
+            android:text="Save Changes"
             android:textSize="16sp"
             app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"

@@ -15,6 +15,7 @@ import com.example.recipely.model.Recipe
 import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.repository.UserRepositoryImpl
 import com.example.recipely.ui.activity.AddRecipeActivity
+import com.example.recipely.ui.activity.EditRecipeActivity
 import com.example.recipely.viewmodel.RecipeViewModel
 import com.example.recipely.viewmodel.UserViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -96,18 +97,19 @@ class RecipesFragment : Fragment() {
     private fun launchUpdateRecipeActivity(
         recipe: Recipe
     ) {
-//        val intent = Intent(requireContext(), UpdateRecipeActivity::class.java).apply {
-//            putExtra("EVENT_ID", event.id)
-//            putExtra("EVENT_TITLE", event.title)
-//            putExtra("EVENT_DESCRIPTION", event.description)
-//            putExtra("EVENT_DATE", event.date)
-//            putExtra("EVENT_LOCATION", event.location)
-//            putExtra("EVENT_CATEGORY", event.category)
-//            putExtra("EVENT_PRICE", event.price)
-//            putExtra("EVENT_CAPACITY", event.capacity)
-//            putExtra("EVENT_IMAGE_URL", event.imageUrl)
-//        }
-//        startActivity(intent)
+        val intent = Intent(requireContext(), EditRecipeActivity::class.java).apply {
+            putExtra("RECIPE_ID", recipe.id)
+            putExtra("RECIPE_TITLE", recipe.title)
+            putExtra("RECIPE_DESCRIPTION", recipe.description)
+            putExtra("RECIPE_PROCESS", recipe.process)
+            putExtra("RECIPE_DURATION", recipe.duration)
+            putExtra("RECIPE_CARBS", recipe.carbs)
+            putExtra("RECIPE_PROTEINS", recipe.proteins)
+            putExtra("RECIPE_FATS", recipe.fats)
+            putExtra("RECIPE_CATEGORY", recipe.category)
+            putExtra("RECIPE_IMAGE_URL", recipe.imageUrl)
+        }
+        startActivity(intent)
     }
 
     private fun deleteRecipe(recipe: Recipe) {
