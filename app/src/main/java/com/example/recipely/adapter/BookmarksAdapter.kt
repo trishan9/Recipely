@@ -11,7 +11,7 @@ import com.example.recipely.model.Recipe
 
 class BookmarksAdapter(
     private var bookmarkList: MutableList<BookmarkModel>,
-
+    private val onRecipeClick: (Recipe) -> Unit,
     private val onFetchEvent: (String, (Recipe?) -> Unit) -> Unit
 ) : RecyclerView.Adapter<BookmarksAdapter.BookmarkViewHolder>() {
 
@@ -39,6 +39,7 @@ class BookmarksAdapter(
                     recipeProtein.text = it.category
                     recipeCarbs.text = it.carbs
                     recipeDuration.text = it.duration
+                    holder.itemView.setOnClickListener { onRecipeClick(recipe) }
 
                     Glide.with(root.context)
                         .load(it.imageUrl)

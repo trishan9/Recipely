@@ -1,5 +1,6 @@
 package com.example.recipely.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipely.adapter.BookmarksAdapter
 import com.example.recipely.databinding.FragmentBookmarksBinding
 import com.example.recipely.model.BookmarkModel
+import com.example.recipely.model.Recipe
 import com.example.recipely.repository.BookmarkRepositoryImpl
 import com.example.recipely.repository.RecipeRepositoryImpl
 import com.example.recipely.repository.UserRepositoryImpl
+import com.example.recipely.ui.activity.RecipeDetailsActivity
 import com.example.recipely.viewmodel.BookmarkViewModel
 import com.example.recipely.viewmodel.RecipeViewModel
 import com.example.recipely.viewmodel.UserViewModel
@@ -48,7 +51,7 @@ class BookmarksFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        bookmarksAdapter = BookmarksAdapter(mutableListOf()) { recipeId, callback ->
+        bookmarksAdapter = BookmarksAdapter(mutableListOf(), onRecipeClick = { event -> navigateToRecipeDetail(event) },) { recipeId, callback ->
 
             recipeViewModel.getRecipe(recipeId) { event, success, message ->
                 callback(event)
@@ -103,6 +106,12 @@ class BookmarksFragment : Fragment() {
             binding.recyclerViewBookmarks.visibility = View.VISIBLE
             binding.tvEmptyState.visibility = View.GONE
         }
+    }
+
+    private fun navigateToRecipeDetail(recipe: Recipe) {
+        val intent = Intent(requireContext(), RecipeDetailsActivity::class.java)
+        intent.putExtra("RECIPE_ID", recipe.id)
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
