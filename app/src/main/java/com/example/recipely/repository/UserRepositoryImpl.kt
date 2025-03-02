@@ -41,7 +41,7 @@ class UserRepositoryImpl : UserRepository {
     ) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
-                callback(true, "Register successful", auth.currentUser?.uid.toString())
+                callback(true, "Registration successful", auth.currentUser?.uid.toString())
             } else {
                 callback(false, it.exception?.message.toString(), "")
             }
@@ -61,7 +61,7 @@ class UserRepositoryImpl : UserRepository {
     override fun addUserToDatabase(userModel: UserModel, callback: (Boolean, String) -> Unit) {
         reference.child(userModel.userId).setValue(userModel).addOnCompleteListener {
             if (it.isSuccessful) {
-                callback(true, "User added to database")
+                callback(true, "Your account has been registered!")
             } else {
                 callback(false, it.exception?.message.toString())
             }
@@ -93,7 +93,7 @@ class UserRepositoryImpl : UserRepository {
     override fun logout(callback: (Boolean, String) -> Unit) {
         try {
             auth.signOut()
-            callback(true, "Sign-out successfully")
+            callback(true, "Logged out successfully!")
         } catch (e: Exception) {
             callback(false, e.message.toString())
         }
@@ -108,7 +108,7 @@ class UserRepositoryImpl : UserRepository {
             if (it.isSuccessful) {
                 callback(true, "Profile edited successfully")
             } else {
-                callback(false, "Unable to edited profile")
+                callback(false, "Unable to edit profile")
             }
         }
     }
