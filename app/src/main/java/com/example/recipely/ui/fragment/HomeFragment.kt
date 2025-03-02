@@ -1,11 +1,12 @@
 package com.example.recipely.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.recipely.R
@@ -14,6 +15,7 @@ import com.example.recipely.databinding.FragmentHomeBinding
 import com.example.recipely.model.BookmarkModel
 import com.example.recipely.model.Recipe
 import com.example.recipely.repository.RecipeRepositoryImpl
+import com.example.recipely.ui.activity.RecipeDetailsActivity
 import com.example.recipely.utils.LoadingUtils
 import com.example.recipely.viewmodel.BookmarkViewModel
 import com.example.recipely.viewmodel.RecipeViewModel
@@ -40,7 +42,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -103,7 +105,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToRecipeDetail(recipe: Recipe) {
-        Toast.makeText(context, "Viewing ${recipe.title}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(requireContext(), RecipeDetailsActivity::class.java)
+        intent.putExtra("RECIPE_ID", recipe.id)
+        startActivity(intent)
     }
 
     private fun handleBookmark(recipe: Recipe) {
